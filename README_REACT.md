@@ -53,17 +53,20 @@ src/
 ### Installation
 
 1. Clone the repository:
+
    ```bash
    git clone <repository-url>
    cd ovoride-react
    ```
 
 2. Install dependencies:
+
    ```bash
    npm install
    ```
 
 3. Start the development server:
+
    ```bash
    npm start
    ```
@@ -80,6 +83,7 @@ src/
 ## 🎨 Customization
 
 ### Colors
+
 The color scheme can be customized in `tailwind.config.js`:
 
 ```javascript
@@ -91,6 +95,7 @@ colors: {
 ```
 
 ### Components
+
 All components are located in the `src/components/` directory and can be easily customized or extended.
 
 ## 📱 Responsive Breakpoints
@@ -102,6 +107,7 @@ All components are located in the `src/components/` directory and can be easily 
 ## 🔧 Build Configuration
 
 The project uses Create React App with additional configuration for:
+
 - Tailwind CSS
 - PostCSS
 - Autoprefixer
