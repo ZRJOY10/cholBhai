@@ -1,5 +1,4 @@
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
-import CookieNotice from './components/CookieNotice';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import LoadingSpinner from './components/ui/LoadingSpinner';
@@ -29,7 +28,6 @@ function App() {
           </Routes>
         </main>
         <Footer />
-        <CookieNotice />
       </div>
     </Router>
   );
