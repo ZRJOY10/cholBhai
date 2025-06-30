@@ -1,12 +1,13 @@
-import BlogSection from './components/BlogSection';
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import CookieNotice from './components/CookieNotice';
 import Footer from './components/Footer';
 import Header from './components/Header';
-import Hero from './components/Hero';
-import Newsletter from './components/Newsletter';
 import LoadingSpinner from './components/ui/LoadingSpinner';
-import VehicleTypes from './components/VehicleTypes';
 import { useLoading } from './hooks/useLoading';
+import BlogListPage from './pages/blog/BlogList.page';
+import BlogSinglePage from './pages/blog/BlogSingle.page';
+import FAQPage from './pages/FAQ.page';
+import HomePage from './pages/home/Home.page';
 
 function App() {
   const { isLoading } = useLoading();
@@ -16,17 +17,21 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <Header />
-      <main>
-        <Hero />
-        <VehicleTypes />
-        <BlogSection />
-        <Newsletter />
-      </main>
-      <Footer />
-      <CookieNotice />
-    </div>
+    <Router>
+      <div className="App">
+        <Header />
+        <main>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/faq" element={<FAQPage />} />
+            <Route path="/blog" element={<BlogListPage />} />
+            <Route path="/blog/:id" element={<BlogSinglePage />} />
+          </Routes>
+        </main>
+        <Footer />
+        <CookieNotice />
+      </div>
+    </Router>
   );
 }
 

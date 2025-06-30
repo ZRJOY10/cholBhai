@@ -94,19 +94,16 @@
 /* Scrollbar styling */
 ::-webkit-scrollbar {
   width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: #f1f5f9;
+  background: #23272f;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
+  background: #444;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
+  background: #ffc107;
 }
 
 /* Loading spinner */
@@ -120,5 +117,5 @@
 }
 
 body {
-  font-family: "Inter", sans-serif;
+  @apply bg-gradient-to-br from-neutral-900 via-zinc-800 to-neutral-700 text-white min-h-screen font-inter;
 }
