@@ -22,10 +22,10 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed w-full top-0 z-50 transition-all duration-300 backdrop-blur-xl border-b border-amber-500/20 shadow-lg ${
+      className={`fixed w-full top-0 z-50 transition-all duration-300 backdrop-blur-xl border-b border-[rgba(var(--color-primary-rgb),0.2)] shadow-lg ${
         isScrolled
-          ? 'bg-black/80 dark:bg-black/90'
-          : 'bg-black/60 dark:bg-black/70'
+          ? 'bg-[rgba(var(--color-bg-rgb),0.8)] dark:bg-[rgba(var(--color-bg-dark-rgb),0.9)]'
+          : 'bg-[rgba(var(--color-bg-rgb),0.6)] dark:bg-[rgba(var(--color-bg-dark-rgb),0.7)]'
       }`}
     >
       <nav className="container-custom">
@@ -33,7 +33,7 @@ const Header = () => {
           {/* Logo */}
           <div className="flex items-center gap-2 flex-shrink-0">
             <Logo />
-            <span className="ml-2 text-2xl font-extrabold tracking-tight text-amber-400 drop-shadow-sm select-none hidden sm:inline">
+            <span className="ml-2 text-2xl font-extrabold tracking-tight text-[rgb(var(--color-primary-rgb))] drop-shadow-sm select-none hidden sm:inline">
               cholBhai
             </span>
           </div>
@@ -44,7 +44,7 @@ const Header = () => {
               <a
                 key={item.name}
                 href={item.href}
-                className="relative text-gray-200 hover:text-amber-400 font-medium px-3 py-2 transition-colors duration-200 after:absolute after:left-0 after:bottom-0 after:w-0 after:h-0.5 after:bg-amber-400 after:transition-all after:duration-300 hover:after:w-full after:rounded-full"
+                className="relative text-[rgb(var(--color-text-light-rgb))] hover:text-[rgb(var(--color-primary-rgb))] font-medium px-3 py-2 transition-colors duration-200 after:absolute after:left-0 after:bottom-0 after:w-0 after:h-0.5 after:bg-[rgb(var(--color-primary-rgb))] after:transition-all after:duration-300 hover:after:w-full after:rounded-full"
                 onClick={() => setIsOpen(false)}
               >
                 {item.name}
@@ -53,7 +53,7 @@ const Header = () => {
             {/* Registration Button */}
             <a
               href="#Registration"
-              className="ml-4 px-4 py-2 rounded-full bg-gradient-to-r from-amber-400 to-yellow-500 text-black font-semibold shadow-md hover:from-yellow-400 hover:to-amber-500 transition-all duration-200 border border-amber-300/60"
+              className="ml-4 px-4 py-2 rounded-full bg-gradient-to-r from-[rgb(var(--color-primary-rgb))] to-[rgb(var(--color-primary-light-rgb))] text-[rgb(var(--color-text-dark-rgb))] font-semibold shadow-md hover:from-[rgb(var(--color-primary-light-rgb))] hover:to-[rgb(var(--color-primary-rgb))] transition-all duration-200 border border-[rgba(var(--color-primary-light-rgb),0.6)]"
             >
               Registration
             </a>

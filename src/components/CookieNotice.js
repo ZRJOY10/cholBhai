@@ -24,21 +24,21 @@ const CookieNotice = () => {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed bottom-6 right-6 max-w-sm bg-white rounded-xl shadow-2xl border border-gray-200 p-6 z-50 animate-slide-in-right">
+    <div className="fixed bottom-6 right-6 max-w-sm bg-[rgb(var(--color-bg-light-rgb))] rounded-xl shadow-2xl border border-[rgb(var(--color-border-rgb))] p-6 z-50 animate-slide-in-right">
       {/* Close Button */}
       <button
         onClick={dismissCookies}
-        className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors duration-200"
+        className="absolute top-4 right-4 text-[rgb(var(--color-text-muted-rgb))] hover:text-[rgb(var(--color-text-rgb))] transition-colors duration-200"
       >
         <XMarkIcon className="w-5 h-5" />
       </button>
 
       {/* Content */}
       <div className="pr-6">
-        <h4 className="font-semibold text-gray-900 mb-2">
+        <h4 className="font-semibold text-[rgb(var(--color-text-rgb))] mb-2">
           This site uses cookies
         </h4>
-        <p className="text-sm text-gray-600 mb-4 leading-relaxed">
+        <p className="text-sm text-[rgb(var(--color-text-muted-rgb))] mb-4 leading-relaxed">
           We may utilize cookies when you access our website, including any related 
           media platforms or mobile applications. These technologies are employed to 
           enhance site functionality and optimize your interactions with our services.
@@ -48,22 +48,17 @@ const CookieNotice = () => {
         <div className="flex items-center gap-3">
           <a
             href="#"
-            className="text-sm text-indigo-600 hover:text-indigo-700 font-medium"
+            className="text-sm text-[rgb(var(--color-link-rgb))] hover:text-[rgb(var(--color-link-hover-rgb))] font-medium"
           >
             View More
           </a>
           <button
             onClick={acceptCookies}
-            className="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200"
+            className="bg-[rgb(var(--color-link-rgb))] hover:bg-[rgb(var(--color-link-hover-rgb))] text-[rgb(var(--color-text-dark-rgb))] px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200"
           >
             Accept All
           </button>
         </div>
-      </div>
-
-      {/* Cookie Icon */}
-      <div className="absolute -top-2 -left-2 w-8 h-8 bg-indigo-100 rounded-full flex items-center justify-center">
-        <span className="text-lg">🍪</span>
       </div>
     </div>
   );

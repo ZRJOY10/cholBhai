@@ -56,77 +56,47 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-neutral-950 text-white relative overflow-hidden">
+    <footer className="bg-[rgb(var(--color-bg-dark-rgb))] text-[rgb(var(--color-text-light-rgb))] relative overflow-hidden">
       {/* Amber gradient background texture */}
       <div className="absolute inset-0 pointer-events-none z-0">
         <div className="absolute -top-32 -left-32 w-[40rem] h-[40rem] bg-gradient-to-br from-amber-400/30 via-amber-500/10 to-transparent rounded-full blur-3xl"></div>
         <div className="absolute bottom-0 right-0 w-[30rem] h-[30rem] bg-gradient-to-tr from-amber-600/20 via-amber-400/10 to-transparent rounded-full blur-2xl"></div>
       </div>
-      <div className="container-custom relative z-10">
-        <div className="section-padding">
-          {/* Main Footer Content */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-            {/* Company Info */}
-            <div className="lg:col-span-2">
-              <div className="mb-6 flex items-center gap-3">
-                <Logo />
-                <span className="text-2xl font-extrabold text-amber-400 tracking-tight select-none hidden sm:inline">
-                  cholBhai
-                </span>
-              </div>
-              <p className="text-zinc-300 mb-6 leading-relaxed">
-                cholBhai connects university students for safe, affordable rides
-                across campus and beyond. Share rides with fellow students and save
-                money on transportation.
-              </p>
-              {/* App Download Buttons */}
-              <div className="space-y-3">
-                <h5 className="font-semibold text-white mb-4">Download Our Apps</h5>
-                <div className="flex flex-col sm:flex-row gap-3">
-                  <a
-                    href="#"
-                    className="inline-flex items-center gap-3 bg-neutral-800 hover:bg-amber-400/20 px-4 py-3 rounded-lg transition-colors duration-200 group border border-amber-400/10"
-                  >
-                    <svg
-                      className="w-8 h-8 text-amber-400"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                    >
-                      <path d="M17.523 15.3414c-.4632-.5047-.9408-1.0281-1.4023-1.5352-.5952-.6539-1.1738-1.2891-1.6738-1.8984-.8203-.9961-1.4766-1.8047-1.7266-2.2891-.2422-.4688-.3594-.9688-.3594-1.4844 0-.6016.1875-1.2188.5625-1.8047.375-.5859.8906-1.1406 1.5-.1641.6094-.3047.9609-.4531 1.0547-.4531.3984 0 .7734.1641 1.125.4922.3516.3281.6641.7734.9375 1.3359.2734.5625.4219 1.1641.4219 1.8047 0 .6406-.1406 1.2656-.4219 1.875-.2812.6094-.6562 1.1719-1.125 1.6875z" />
-                    </svg>
-                    <div className="text-left">
-                      <div className="text-xs text-gray-300">Get it on</div>
-                      <div className="font-semibold text-amber-400">Google Play</div>
-                    </div>
-                  </a>
-                  <a
-                    href="#"
-                    className="inline-flex items-center gap-3 bg-neutral-800 hover:bg-amber-400/20 px-4 py-3 rounded-lg transition-colors duration-200 group border border-amber-400/10"
-                  >
-                    <svg
-                      className="w-8 h-8 text-amber-400"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                    >
-                      <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
-                    </svg>
-                    <div className="text-left">
-                      <div className="text-xs text-gray-300">Download on the</div>
-                      <div className="font-semibold text-amber-400">App Store</div>
-                    </div>
-                  </a>
-                </div>
-              </div>
+      <div className="container-custom relative z-10 py-16">
+        <div className="flex flex-col lg:flex-row lg:justify-between gap-16 lg:gap-24 items-start">
+          {/* Left: Logo and tagline */}
+          <div className="flex flex-col gap-4 items-center lg:items-start flex-shrink-0 w-full lg:w-1/4">
+            <Logo />
+            <span className="text-2xl font-extrabold tracking-tight text-[rgb(var(--color-primary-rgb))] drop-shadow-sm select-none">
+              cholBhai
+            </span>
+            <span className="text-sm text-[rgb(var(--color-text-muted-rgb))]">
+              Campus rides made easy.
+            </span>
+            <div className="flex gap-4 mt-6">
+              {socialLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  className="w-10 h-10 flex items-center justify-center rounded-full bg-[rgba(var(--color-primary-rgb),0.08)] hover:bg-[rgba(var(--color-primary-rgb),0.18)] text-[rgb(var(--color-primary-rgb))] transition-all duration-200 shadow-sm"
+                  aria-label={link.name}
+                >
+                  {link.icon}
+                </a>
+              ))}
             </div>
-            {/* Company Links */}
+            <span className="text-xs text-[rgb(var(--color-text-muted-rgb))] mt-8">cholBhai &copy; {new Date().getFullYear()} All Rights Reserved</span>
+          </div>
+          {/* Center: Navigation Links */}
+          <div className="grid grid-cols-2 gap-12 w-full lg:w-2/5 mt-12 lg:mt-0">
             <div>
-              <h5 className="font-semibold text-white mb-6">Company</h5>
-              <ul className="space-y-3">
+              <h5 className="font-semibold text-[rgb(var(--color-text-light-rgb))] mb-4 uppercase tracking-widest text-base">Company</h5>
+              <ul className="space-y-2">
                 {companyLinks.map((link) => (
                   <li key={link.name}>
                     <a
                       href={link.href}
-                      className="text-gray-300 hover:text-amber-400 transition-colors duration-200"
+                      className="text-[rgb(var(--color-text-muted-rgb))] hover:text-[rgb(var(--color-primary-rgb))] transition-colors duration-200 text-base"
                     >
                       {link.name}
                     </a>
@@ -134,15 +104,14 @@ const Footer = () => {
                 ))}
               </ul>
             </div>
-            {/* Legal Links */}
             <div>
-              <h5 className="font-semibold text-white mb-6">Legal</h5>
-              <ul className="space-y-3">
+              <h5 className="font-semibold text-[rgb(var(--color-text-light-rgb))] mb-4 uppercase tracking-widest text-base">Legal</h5>
+              <ul className="space-y-2">
                 {legalLinks.map((link) => (
                   <li key={link.name}>
                     <a
                       href={link.href}
-                      className="text-gray-300 hover:text-amber-400 transition-colors duration-200"
+                      className="text-[rgb(var(--color-text-muted-rgb))] hover:text-[rgb(var(--color-primary-rgb))] transition-colors duration-200 text-base"
                     >
                       {link.name}
                     </a>
@@ -151,24 +120,41 @@ const Footer = () => {
               </ul>
             </div>
           </div>
-          {/* Bottom Footer */}
-          <div className="pt-8 border-t border-zinc-800">
-            <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-              <p className="text-zinc-400 text-sm">
-                © 2025 cholBhai. All rights reserved.
-              </p>
-              {/* Social Links */}
-              <div className="flex items-center gap-4">
-                {socialLinks.map((social) => (
-                  <a
-                    key={social.name}
-                    href={social.href}
-                    className="text-zinc-400 hover:text-amber-400 transition-colors duration-200"
-                    aria-label={social.name}
-                  >
-                    {social.icon}
-                  </a>
-                ))}
+          {/* Right: App Download */}
+          <div className="flex flex-col gap-4 w-full lg:w-1/5 items-center lg:items-end mt-12 lg:mt-0">
+            <h5 className="font-semibold text-[rgb(var(--color-text-light-rgb))] mb-2 uppercase tracking-widest text-base">Get the App</h5>
+            <div className="flex flex-col gap-4">
+              <a
+                href="https://play.google.com/store"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 bg-[rgba(var(--color-primary-rgb),0.10)] hover:bg-[rgba(var(--color-primary-rgb),0.18)] px-6 py-4 rounded-2xl transition-all duration-200 border-2 border-transparent hover:border-[rgba(var(--color-primary-rgb),0.25)] shadow-lg group focus:outline-none focus:ring-2 focus:ring-[rgba(var(--color-primary-rgb),0.3)]"
+                style={{ boxShadow: '0 4px 24px 0 rgba(var(--color-primary-rgb),0.10)' }}
+              >
+                <svg
+                  className="w-8 h-8 text-[rgb(var(--color-primary-rgb))] group-hover:scale-110 transition-transform duration-200"
+                  viewBox="0 0 512 512"
+                  fill="currentColor"
+                >
+                  <path d="M325.3 234.3L104.6 24.6C97.7 18.2 88.2 15.7 79.2 18.7c-9 3-15.2 11.2-15.2 20.7v428.9c0 9.5 6.2 17.7 15.2 20.7 2.2.7 4.4 1.1 6.7 1.1 6.1 0 12.1-2.3 16.7-6.7l220.7-209.7-1.8-1.6zM372.6 278.1l-46.2-43.9-36.7 34.8 36.7 34.8 46.2-43.9zm-53.2 50.5l-36.7-34.8-36.7 34.8 36.7 34.8 36.7-34.8zm-36.7-69.6l36.7-34.8-36.7-34.8-36.7 34.8 36.7 34.8zm-53.2-50.5l46.2 43.9 36.7-34.8-36.7-34.8-46.2 43.9zm53.2-50.5l36.7 34.8 36.7-34.8-36.7-34.8-36.7 34.8zm53.2 50.5l-46.2-43.9-36.7 34.8 36.7 34.8 46.2-43.9zm-53.2 50.5l-36.7-34.8-36.7 34.8 36.7 34.8 36.7-34.8zm-36.7 69.6l36.7-34.8-36.7-34.8-36.7 34.8 36.7 34.8zm53.2-50.5l46.2 43.9 36.7-34.8-36.7-34.8-46.2 43.9z"/>
+                </svg>
+                <div className="text-left">
+                  <div className="text-xs text-[rgb(var(--color-text-muted-rgb))] font-medium tracking-wide">Get it on</div>
+                  <div className="font-bold text-lg text-[rgb(var(--color-primary-rgb))] group-hover:text-[rgb(var(--color-primary-dark-rgb))] transition-colors duration-200">Google Play</div>
+                </div>
+              </a>
+              <div className="flex items-center gap-3 bg-[rgba(var(--color-primary-light-rgb),0.10)] hover:bg-[rgba(var(--color-primary-light-rgb),0.18)] px-6 py-4 rounded-2xl transition-all duration-200 border-2 border-transparent hover:border-[rgba(var(--color-primary-light-rgb),0.25)] shadow-lg group focus:outline-none focus:ring-2 focus:ring-[rgba(var(--color-primary-light-rgb),0.3)] cursor-not-allowed select-none" style={{ boxShadow: '0 4px 24px 0 rgba(var(--color-primary-light-rgb),0.10)' }}>
+                <svg
+                  className="w-8 h-8 text-[rgb(var(--color-primary-light-rgb))] group-hover:scale-110 transition-transform duration-200"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
+                </svg>
+                <div className="text-left">
+                  <div className="text-xs text-[rgb(var(--color-text-muted-rgb))] font-medium tracking-wide">Download on the</div>
+                  <div className="font-bold text-lg text-[rgb(var(--color-primary-light-rgb))] group-hover:text-[rgb(var(--color-primary-rgb))] transition-colors duration-200">App Store <br /> <span className='text-xs font-normal'>(Coming soon)</span></div>
+                </div>
               </div>
             </div>
           </div>

@@ -19,14 +19,13 @@ const steps = [
   },
 ];
 
-
 const HowItWorks = () => {
   return (
-    <section className="py-20 bg-neutral-950">
+    <section className="py-20 bg-[rgb(var(--color-bg-dark-rgb))]">
       <div className="container-custom flex flex-col lg:flex-row items-center gap-12">
         {/* Left: App Image */}
         <div className="flex-1 flex justify-center relative">
-          <div className="absolute -left-10 top-1/2 -translate-y-1/2 w-[28rem] h-[28rem] rounded-full bg-amber-300/20 blur-2xl z-0 hidden md:block"></div>
+          <div className="absolute -left-10 top-1/2 -translate-y-1/2 w-[28rem] h-[28rem] rounded-full bg-[rgba(var(--color-primary-light-rgb),0.2)] blur-2xl z-0 hidden md:block"></div>
           <img
             src={ImageVarriables.Mobile3Img}
             alt="cholBhai App UI"
@@ -35,21 +34,21 @@ const HowItWorks = () => {
         </div>
         {/* Right: Steps */}
         <div className="flex-1">
-          <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-10">Ride Made Simple</h2>
+          <h2 className="text-4xl md:text-5xl font-extrabold text-[rgb(var(--color-text-light-rgb))] mb-10">Ride Made Simple</h2>
           <ol className="space-y-8 relative">
             {steps.map((step, idx) => (
               <li key={step.title} className="flex items-start gap-6">
                 <div className="flex flex-col items-center">
-                  <span className="w-10 h-10 flex items-center justify-center rounded-lg bg-amber-100 text-2xl font-bold text-amber-500 border-2 border-amber-300/60 shadow-md">
+                  <span className="w-10 h-10 flex items-center justify-center rounded-lg bg-[rgb(var(--color-primary-light-rgb))] text-2xl font-bold text-[rgb(var(--color-primary-rgb))] border-2 border-[rgba(var(--color-primary-rgb),0.6)] shadow-md">
                     {idx + 1}
                   </span>
                   {idx !== steps.length - 1 && (
-                    <span className="h-16 w-1 bg-amber-200/60 mt-1 mb-1"></span>
+                    <span className="h-16 w-1 bg-[rgba(var(--color-primary-light-rgb),0.6)] mt-1 mb-1"></span>
                   )}
                 </div>
                 <div>
-                  <h3 className="text-xl md:text-2xl font-bold text-white mb-1">{step.title}</h3>
-                  <p className="text-gray-300 text-base md:text-lg max-w-md">{step.desc}</p>
+                  <h3 className="text-xl md:text-2xl font-bold text-[rgb(var(--color-text-light-rgb))] mb-1">{step.title}</h3>
+                  <p className="text-[rgb(var(--color-text-muted-rgb))] text-base md:text-lg max-w-md">{step.desc}</p>
                 </div>
               </li>
             ))}

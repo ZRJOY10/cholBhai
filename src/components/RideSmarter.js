@@ -3,22 +3,22 @@ import ImageVarriables from '../constant/ImageVarriables';
 
 const features = [
   {
-    icon: <BoltIcon className="w-7 h-7 text-amber-400" />,
+    icon: <BoltIcon className="w-7 h-7 text-[rgb(var(--color-primary-rgb))]" />,
     title: 'Quick Ride Requests',
     desc: 'Request a ride in seconds and connect with nearby riders on your campus instantly.'
   },
   {
-    icon: <ClockIcon className="w-7 h-7 text-amber-400" />,
+    icon: <ClockIcon className="w-7 h-7 text-[rgb(var(--color-primary-rgb))]" />,
     title: 'Live Ride Tracking',
     desc: 'See exactly where your rider is and when they’ll arrive. No more guessing or waiting.'
   },
   {
-    icon: <CreditCardIcon className="w-7 h-7 text-amber-400" />,
+    icon: <CreditCardIcon className="w-7 h-7 text-[rgb(var(--color-primary-rgb))]" />,
     title: 'Pay Cash or bKash',
     desc: 'Enjoy simple, hassle-free payments using cash or bKash — your choice every time.'
   },
   {
-    icon: <CurrencyDollarIcon className="w-7 h-7 text-amber-400" />,
+    icon: <CurrencyDollarIcon className="w-7 h-7 text-[rgb(var(--color-primary-rgb))]" />,
     title: 'Student-Friendly Fares',
     desc: 'Affordable rides with transparent pricing, perfect for campus budgets.'
   },
@@ -26,11 +26,11 @@ const features = [
 
 const RideSmarter = () => {
 	return (
-		<section className="py-20 bg-neutral-950 relative overflow-hidden">
+		<section className="py-20 bg-[rgb(var(--color-bg-dark-rgb))] relative overflow-hidden">
 			{/* Amber gradient texture background */}
 			<div className="absolute inset-0 pointer-events-none z-0">
-				<div className="absolute -top-32 -left-32 w-[40rem] h-[40rem] bg-gradient-to-br from-amber-400/30 via-amber-500/10 to-transparent rounded-full blur-3xl"></div>
-				<div className="absolute bottom-0 right-0 w-[30rem] h-[30rem] bg-gradient-to-tr from-amber-600/20 via-amber-400/10 to-transparent rounded-full blur-2xl"></div>
+				<div className="absolute -top-32 -left-32 w-[40rem] h-[40rem] bg-gradient-to-br from-[rgba(var(--color-primary-rgb),0.3)] via-[rgba(var(--color-primary-light-rgb),0.1)] to-transparent rounded-full blur-3xl"></div>
+				<div className="absolute bottom-0 right-0 w-[30rem] h-[30rem] bg-gradient-to-tr from-[rgba(var(--color-primary-dark-rgb),0.2)] via-[rgba(var(--color-primary-rgb),0.1)] to-transparent rounded-full blur-2xl"></div>
 				<svg
 					className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-10"
 					width="600"
@@ -38,7 +38,6 @@ const RideSmarter = () => {
 					viewBox="0 0 600 300"
 					fill="none"
 				>
-					
 					<defs>
 						<linearGradient
 							id="amberGradient"
@@ -48,8 +47,8 @@ const RideSmarter = () => {
 							y2="300"
 							gradientUnits="userSpaceOnUse"
 						>
-							<stop stopColor="#f59e0b" />
-							<stop offset="1" stopColor="#fde68a" />
+							<stop stopColor="var(--color-primary)" />
+							<stop offset="1" stopColor="var(--color-primary-light)" />
 						</linearGradient>
 					</defs>
 				</svg>
@@ -65,7 +64,7 @@ const RideSmarter = () => {
 								className="object-cover w-full h-full"
 							/>
 						</div>
-						<span className="flex items-center justify-center w-16 h-16 rounded-full bg-amber-100 shadow-lg">
+						<span className="flex items-center justify-center w-16 h-16 rounded-full bg-[var(--color-primary-light)] shadow-lg">
 							<svg
 								width="36"
 								height="36"
@@ -74,7 +73,7 @@ const RideSmarter = () => {
 							>
 								<path
 									d="M8 12h8m0 0l-3-3m3 3l-3 3"
-									stroke="#F59E0B"
+									stroke="var(--color-primary)"
 									strokeWidth="2"
 									strokeLinecap="round"
 									strokeLinejoin="round"
@@ -101,7 +100,7 @@ const RideSmarter = () => {
 				</div>
 				{/* Right: Features */}
 				<div className="flex-1">
-					<h2 className="text-4xl md:text-5xl font-extrabold mb-10 bg-gradient-to-r from-amber-400 via-amber-200 to-amber-500 bg-clip-text text-transparent drop-shadow-lg">
+					<h2 className="text-4xl md:text-5xl font-extrabold mb-10 bg-gradient-to-r from-[var(--color-primary)] via-[var(--color-primary-light)] to-[var(--color-primary)] bg-clip-text text-transparent drop-shadow-lg">
 						Ride Smarter,{' '}
 						<span className="text-white">Ride Better</span>
 					</h2>

@@ -17,7 +17,7 @@ function App() {
 
   return (
     <Router>
-      <div className="App">
+      <div className="App bg-[var(--color-bg-dark)] text-[var(--color-text)]">
         <Header />
         <main>
           <Routes>

@@ -1,4 +1,3 @@
-
 const Button = ({ 
   children, 
   variant = 'primary', 
@@ -11,9 +10,9 @@ const Button = ({
   const baseClasses = 'inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed';
   
   const variants = {
-    primary: 'btn-primary',
-    secondary: 'btn-secondary',
-    outline: 'btn-outline',
+    primary: 'bg-[rgb(var(--color-primary-rgb))] text-[rgb(var(--color-text-dark-rgb))] hover:bg-[rgb(var(--color-primary-dark-rgb))] focus:ring-[rgb(var(--color-primary-rgb))]',
+    secondary: 'bg-[rgb(var(--color-bg-muted-rgb))] text-[rgb(var(--color-primary-rgb))] hover:bg-[rgb(var(--color-primary-light-rgb))] focus:ring-[rgb(var(--color-primary-rgb))]',
+    outline: 'bg-transparent border-2 border-[rgb(var(--color-primary-rgb))] text-[rgb(var(--color-primary-rgb))] hover:bg-[rgba(var(--color-primary-rgb),0.1)] focus:ring-[rgb(var(--color-primary-rgb))]',
   };
   
   const sizes = {
